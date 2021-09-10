@@ -2,84 +2,194 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Septimo Arte - Proximamente</title>
-    <!--Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Septimo Arte - Proximamente</title>
+  <!--Bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <!--NAVBAR-->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            </a>
+  <!--NAVBAR-->
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> SEPTIMO ARTE
+        <!--
+                <img src="images/logo.jpg" class="rounded-circle" alt="" width="" height="45" class="d-inline-block align-text-top">
+                -->
+      </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+                aria-current="page" href="https://imaster.academy">INICIO</a></button></li>
+          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+                aria-current="page" href="https://www.google.com">CARTELERA</a></button></li>
+          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+                aria-current="page" href="https://www.google.com">PROXIMAMENTE</a></button></li>
+          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+                aria-current="page" href="https://www.google.com">COMIDAS</a></button></li>
+
+          <!--
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="#">INICIO</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="#">CARTELERA</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="#">PROXIMAMENTE</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="#">COMIDAS</a></li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            CUENTA
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">INICIAR SESION</a></li>
-                            <li><a class="dropdown-item" href="#">REGISTRARSE</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                    -->
+          <li class="nav-item dropdown">
+            <button type="button" class="btn btn-secondary btn-sm">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                CUENTA
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">INICIAR SESION</a></li>
+                <li><a class="dropdown-item" href="#">REGISTRARSE</a></li>
+              </ul>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <!--TARJETAS DE PELICULAS-->
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/01.escape_room_2.jpg" class="card-img-top"
+            alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Escape Room 2: Reto Mortal</h5>
+          <p class="card-text">Título en inglés:
+            Escape Room: Tournament of Champions <br>Estreno:
+            16-Sept-2021 <br>Género:
+            Suspenso, Thriller</p>
         </div>
-    </nav>
+        <div class="card-footer">
+          <small class="text-muted">Recomendada para Mayores de 12 años <br>98 Min</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/02.tantas_almas.jpg" class="card-img-top"
+            alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Tantas Almas</h5>
+          <p class="card-text">Estreno:
+            16-Sept-2021<br>Género:
+            Drama </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Recomendada para Mayores de 12 años <br> 137 Min</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/03.contra_el_fuego.png" class="card-img-top"
+            alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Contra El Fuego</h5>
+          <p class="card-text">Título en inglés:
+            Fire<br>Estreno:
+            16-Sept-2021 <br> Género:
+            Acción, Drama</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Recomendada para Mayores de 12 años <br> 131 Min</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/04.cry_macho.jpg" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Cry Macho</h5>
+          <p class="card-text">Título en inglés:
+            Cry Macho<br>Estreno:
+            16-Sept-2021 <br> Género:
+            Drama</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Recomendada para Mayores de 12 años <br> 104 Min</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/05.el_charlatan.jpg" class="card-img-top"
+            alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">El Charlatán</h5>
+          <p class="card-text">Estreno:
+            16-Sept-2021<br>Género:
+            Drama </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Recomendada para Mayores de 12 años <br> 118 Min</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/06.operacion_vanguardia.jpg" class="card-img-top"
+            alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Operación Vanguardia</h5>
+          <p class="card-text">Título en inglés:
+            Vanguard<br>Estreno:
+            16-Sept-2021 <br> Género:
+            Acción, aventura, Comedia </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Recomendada para Mayores de 12 años <br> 108 Min</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/07.eternos.jpg" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Eternos Compañeros</h5>
+          <p class="card-text">Título en inglés:
+            Little Q<br>Estreno:
+            23-Sept-2021<br> Género:
+            Drama </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Recomendada para Mayores de 12 años <br> 107 Min</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="https://www.google.com"><img src="images/Movies/08.rock_dog.png" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Rock Dog: Renace Una Estrella</h5>
+          <p class="card-text">Título en inglés:
+            Rock Dog 2<br>Estreno:
+            23-Sept-2021<br> Género:
+            Animación, Aventura, Comedia </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Para todo el Público <br> 90 Min</small>
+        </div>
+      </div>
+    </div>
 
-
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id itaque eveniet debitis molestias rerum tempora
-        quas obcaecati facere fuga voluptatum sapiente magnam ullam harum odit, nemo et illum suscipit.</p>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-        crossorigin="anonymous">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
 </body>
 
