@@ -9,13 +9,14 @@
   <!--Bootstrap CSS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
+  <!--CSS-->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <!--NAVBAR-->
   <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-secondary">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" href="#"> SEPTIMO ARTE
         <!--
                 <img src="images/logo.jpg" class="rounded-circle" alt="" width="" height="45" class="d-inline-block align-text-top">
@@ -62,7 +63,8 @@
   </nav>
   <br>
   <!--TARJETAS DE PELICULAS-->
-  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <h1 class="text-center">Próximos Etrenos</h1>
+  <div class="row row-cols-1 row-cols-md-4 g-5 m-4">
     <div class="col">
       <div class="card h-100">
         <a href="https://www.google.com"><img src="images/Movies/01.escape_room_2.jpg" class="card-img-top"
@@ -188,9 +190,64 @@
     </div>
 
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
+
+
+  <!--FOOTER PIE DE PAGINA-->
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>Suscríbete a nuestro boletín de noticias</strong>
+              </p>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example2" class="form-control" />
+                <label class="form-label" for="form5Example2">Dirección de correo electrónico</label>
+              </div>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-outline-light mb-4">
+                SUSCRIBIR
+              </button>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-white" href="">Septimo Arte</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+ <!-- jQuery and JS bundle w/ Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-
+DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/
 </body>
 
 </html>
