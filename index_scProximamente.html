@@ -11,11 +11,13 @@
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <!--CSS-->
   <link rel="stylesheet" href="style.css">
+  <!--ICONS-->
+  <script src="https://kit.fontawesome.com/2a8c94f5c5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!--NAVBAR-->
-  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-secondary">
+  <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#"> SEPTIMO ARTE
         <!--
@@ -28,15 +30,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+          <li class="nav-item me-2"><button type="button" class="btn btn-dark btn-sm"><a class="nav-link"
                 aria-current="page" href="https://imaster.academy">INICIO</a></button></li>
-          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+          <li class="nav-item me-2"><button type="button" class="btn btn-dark btn-sm"><a class="nav-link"
                 aria-current="page" href="https://www.google.com">CARTELERA</a></button></li>
-          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+          <li class="nav-item me-2"><button type="button" class="btn btn-dark btn-sm"><a class="nav-link"
                 aria-current="page" href="https://www.google.com">PROXIMAMENTE</a></button></li>
-          <li class="nav-item"><button type="button" class="btn btn-secondary btn-sm"><a class="nav-link"
+          <li class="nav-item me-2"><button type="button" class="btn btn-dark btn-sm"><a class="nav-link"
                 aria-current="page" href="https://www.google.com">COMIDAS</a></button></li>
 
           <!--
@@ -45,8 +47,8 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="#">PROXIMAMENTE</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="#">COMIDAS</a></li>
                     -->
-          <li class="nav-item dropdown">
-            <button type="button" class="btn btn-secondary btn-sm">
+          <li class="nav-item dropdown me-2">
+            <button type="button" class="btn btn-dark btn-sm">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 CUENTA
@@ -57,16 +59,54 @@
               </ul>
             </button>
           </li>
+
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Buscar Pelicula" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+
         </ul>
       </div>
     </div>
   </nav>
-  <br>
+
+  <!--CARUSEL-->
+  <div id="carouselExampleCaptions" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/Carrusel/01.banner.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Próximos estrenos</h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Carrusel/02.banner.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class=text-white>Próximos estrenos</h2>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
   <!--TARJETAS DE PELICULAS-->
-  <h1 class="text-center">Próximos Etrenos</h1>
-  <div class="row row-cols-1 row-cols-md-4 g-5 m-4">
+  <!--<h1 class="text-center">Próximos Etrenos</h1>-->
+  <div class="row row-cols-1 row-cols-md-4 g-5 m-0">
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/01.escape_room_2.jpg" class="card-img-top"
             alt="..."></a>
         <div class="card-body">
@@ -82,7 +122,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/02.tantas_almas.jpg" class="card-img-top"
             alt="..."></a>
         <div class="card-body">
@@ -97,7 +137,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/03.contra_el_fuego.png" class="card-img-top"
             alt="..."></a>
         <div class="card-body">
@@ -113,7 +153,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/04.cry_macho.jpg" class="card-img-top" alt="..."></a>
         <div class="card-body">
           <h5 class="card-title">Cry Macho</h5>
@@ -128,7 +168,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/05.el_charlatan.jpg" class="card-img-top"
             alt="..."></a>
         <div class="card-body">
@@ -143,7 +183,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/06.operacion_vanguardia.jpg" class="card-img-top"
             alt="..."></a>
         <div class="card-body">
@@ -159,7 +199,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/07.eternos.jpg" class="card-img-top" alt="..."></a>
         <div class="card-body">
           <h5 class="card-title">Eternos Compañeros</h5>
@@ -174,7 +214,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 text-white bg-dark">
         <a href="https://www.google.com"><img src="images/Movies/08.rock_dog.png" class="card-img-top" alt="..."></a>
         <div class="card-body">
           <h5 class="card-title">Rock Dog: Renace Una Estrella</h5>
@@ -190,12 +230,34 @@
     </div>
 
   </div>
-
-
+  <br>
   <!--FOOTER PIE DE PAGINA-->
+  <!-- Footer -->
   <footer class="bg-dark text-center text-white">
     <!-- Grid container -->
-    <div class="container p-4 pb-0">
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+
       <!-- Section: Form -->
       <section class="">
         <form action="">
@@ -204,7 +266,7 @@
             <!--Grid column-->
             <div class="col-auto">
               <p class="pt-2">
-                <strong>Suscríbete a nuestro boletín de noticias</strong>
+                <strong>Suscríbase a nuestro boletín</strong>
               </p>
             </div>
             <!--Grid column-->
@@ -212,9 +274,9 @@
             <!--Grid column-->
             <div class="col-md-5 col-12">
               <!-- Email input -->
-              <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control" />
-                <label class="form-label" for="form5Example2">Dirección de correo electrónico</label>
+              <div class="form-floating  text-dark mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">name@example.com</label>
               </div>
             </div>
             <!--Grid column-->
@@ -223,7 +285,7 @@
             <div class="col-auto">
               <!-- Submit button -->
               <button type="submit" class="btn btn-outline-light mb-4">
-                SUSCRIBIR
+                Subscribe
               </button>
             </div>
             <!--Grid column-->
@@ -232,16 +294,120 @@
         </form>
       </section>
       <!-- Section: Form -->
+
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+          eum harum corrupti dicta, aliquam sequi voluptate quas.
+        </p>
+      </section>
+      <!-- Section: Text -->
+
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
     </div>
     <!-- Grid container -->
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2021 Copyright:
-      <a class="text-white" href="">Septimo Arte</a>
+      <a>Septimo Arte</a>
     </div>
     <!-- Copyright -->
   </footer>
+  <!-- Footer -->
+
   <!-- jQuery and JS bundle w/ Popper.js -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
     integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
