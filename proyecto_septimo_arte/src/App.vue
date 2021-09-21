@@ -68,7 +68,7 @@ export default {
           transition="scale-transition"
           width="40"
         />
-<!--
+        <!--
         <v-img
           alt="Vuetify Name"
           class="shrink mt-1 hidden-sm-and-down"
@@ -95,93 +95,102 @@ export default {
       </v-btn>
 
       <div class="text-center">
-    <v-menu
-      v-model="menu"
-      :close-on-content-click="false"
-      :nudge-width="200"
-      offset-x
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-        rounded
-          color="amber darken-1"
-          dark
-          v-bind="attrs"
-          v-on="on"
+        <v-menu
+          v-model="menu"
+          :close-on-content-click="false"
+          :nudge-width="200"
+          offset-x
         >
-                    <v-icon>mdi-account-circle</v-icon>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn rounded color="amber darken-1" dark v-bind="attrs" v-on="on">
+              <v-icon>mdi-account-circle</v-icon>
+            </v-btn>
+          </template>
 
-        </v-btn>
-      </template>
+          <v-card>
+            <v-list>
+              <v-list-item>
+                <v-list-item-avatar>
+                  <img
+                    src="https://cdn.vuetifyjs.com/images/john.jpg"
+                    alt="#"
+                  />
+                </v-list-item-avatar>
 
-      <v-card>
-        <v-list>
-          <v-list-item>
-            <v-list-item-avatar>
-              <img
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                alt="#"
-              >
-            </v-list-item-avatar>
+                <v-list-item-content>
+                  <v-list-item-title>Alejandro Jimenez</v-list-item-title>
+                  <v-list-item-subtitle
+                    >Founder of Vuetify</v-list-item-subtitle
+                  >
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
 
-            <v-list-item-content>
-              <v-list-item-title>Alejandro Jimenez</v-list-item-title>
-              <v-list-item-subtitle>Founder of Vuetify</v-list-item-subtitle>
-            </v-list-item-content>
+            <v-divider></v-divider>
 
-            
-          </v-list-item>
-        </v-list>
+            <v-list>
+              <v-list-item>
+                <v-list-item-action>
+                  <v-switch v-model="message" color="purple"></v-switch>
+                </v-list-item-action>
+                <v-list-item-title>Enable messages</v-list-item-title>
+              </v-list-item>
 
-        <v-divider></v-divider>
+              <v-list-item>
+                <v-list-item-action>
+                  <v-switch v-model="hints" color="purple"></v-switch>
+                </v-list-item-action>
+                <v-list-item-title>Enable hints</v-list-item-title>
+              </v-list-item>
+            </v-list>
 
-        <v-list>
-          <v-list-item>
-            <v-list-item-action>
-              <v-switch
-                v-model="message"
-                color="purple"
-              ></v-switch>
-            </v-list-item-action>
-            <v-list-item-title>Enable messages</v-list-item-title>
-          </v-list-item>
+            <v-card-actions>
+              <v-spacer></v-spacer>
 
-          <v-list-item>
-            <v-list-item-action>
-              <v-switch
-                v-model="hints"
-                color="purple"
-              ></v-switch>
-            </v-list-item-action>
-            <v-list-item-title>Enable hints</v-list-item-title>
-          </v-list-item>
-        </v-list>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn
-            text
-            @click="menu = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            color="primary"
-            text
-            @click="menu = false"
-          >
-            Save
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-menu>
-  </div>
+              <v-btn text @click="menu = false"> Cancel </v-btn>
+              <v-btn color="primary" text @click="menu = false"> Save </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-menu>
+      </div>
     </v-app-bar>
 
     <v-main>
       <router-view />
     </v-main>
+    <v-footer dark padless>
+      <v-card flat tile class="black white--text text-center">
+        <v-card-text>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4 amber--text outlined"
+            icon
+          >
+            <v-icon size="24px">
+              {{ icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-text>
+
+        <v-card-text class="white--text pt-0">
+          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
+          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
+          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
+          a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
+          lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
+          iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum
+          tempor vel ut orci. Orci varius natoque penatibus et magnis dis
+          parturient montes, nascetur ridiculus mus.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-text class="amber--text">
+          {{ new Date().getFullYear() }} — <strong>Septimo Arte</strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
@@ -189,6 +198,7 @@ export default {
 export default {
   data: () => ({
     links: ["INICIO", "CARTELERA", "PRÓXIMOS ESTRENOS", "CATERING"],
+    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
   }),
 };
 </script>
