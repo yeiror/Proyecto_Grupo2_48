@@ -1,4 +1,4 @@
-# proyecto_septimo_arte
+# septimo_arte
 
 ## Project setup
 ```
