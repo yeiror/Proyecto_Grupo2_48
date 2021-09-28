@@ -9,7 +9,7 @@
           link
         >
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon color="warning">{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
@@ -24,7 +24,6 @@
         </div>
       </template>
     </v-navigation-drawer>
-    
 
     <v-app-bar dark app color="black">
       <v-app-bar-nav-icon
@@ -39,16 +38,10 @@
       <v-toolbar-title>SEPTIMO ARTE</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-    
 
     <v-main>
       <router-view></router-view>
     </v-main>
-    
-
-    
-    
-
   </v-app>
 </template>
 
@@ -60,10 +53,14 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: "Inicio", icon: "mdi-home", page: "/"},
-        { title: "Cartelera", icon: "mdi-filmstrip", page: "/Cartelera"},
-        {title: "Proximamente", icon: "mdi-movie-filter", page: "/Proximamente"},
-        { title: "Catering", icon: "mdi-food", page: "/Catering"},
+        { title: "Inicio", icon: "mdi-home", page: "/" },
+        { title: "Cartelera", icon: "mdi-filmstrip", page: "/Cartelera" },
+        {
+          title: "Proximamente",
+          icon: "mdi-movie-filter",
+          page: "/Proximamente",
+        },
+        { title: "Catering", icon: "mdi-food", page: "/Catering" },
       ],
     };
   },
