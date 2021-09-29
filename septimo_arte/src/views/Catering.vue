@@ -18,15 +18,6 @@
   <h1 class="heading"> Nuestros productos </h1>
   <li></li>
 
-    <v-container>
-      <v-row>
-        <v-col v-for="cartelera in carteleras" :key="cartelera.id" md="4">
-          <info-cartelera :cartelera="cartelera" />
-        </v-col>
-      </v-row>
-    </v-container>
-
-
   <div class="box-container">
 
       <div class="box">
