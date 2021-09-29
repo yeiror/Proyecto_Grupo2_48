@@ -30,6 +30,16 @@ const routes = [
     name: 'Inicio_sesion',
     component: () => import( '../views/Inicio_sesion.vue')
   },
+  {
+    path: '/Registro',
+    name: 'Registro',
+    component: () => import( '../views/Registro.vue')
+  },
+  {
+    path: '/Reserva',
+    name: 'Reserva',
+    component: () => import( '../views/Reserva.vue')
+  },
 ]
 
 const router = new VueRouter({

@@ -21,6 +21,9 @@
       <template v-slot:append>
         <div class="pa-2">
           <v-btn block href="/Inicio_sesion"> INICIAR SESION </v-btn>
+           <div class="pa-2">
+          <v-btn block href="/Registro"> REGISTRARSE </v-btn>
+        </div>
         </div>
       </template>
     </v-navigation-drawer>

@@ -1,17 +1,17 @@
 <template>
-  <v-card class="pa-3 mx-auto" dark>
-    <v-img :src="estreno.imagen">
-    </v-img>
+  <v-card class="pa-3 mx-auto"  dark>
+    <v-img   :src="cartelera.imagen"></v-img>
 
     <v-card-title class="pb-0 text-h6">
-      {{ estreno.title }}
+      {{ cartelera.title }}
     </v-card-title>
 
+  
 
- <v-card-actions>
-      <v-btn color="orange" text :to="estreno.reserva" link> Reservar </v-btn>
+    <v-card-actions>
+      <v-btn color="orange" text :to="cartelera.reserva" link> Reservar </v-btn>
 
-      <v-btn color="orange" text :href="estreno.trailer" target="_blank" link>
+      <v-btn color="orange" text :href="cartelera.trailer" target="_blank" link>
         Ver trailer
       </v-btn>
       <v-spacer></v-spacer>
@@ -28,16 +28,16 @@
         <v-divider></v-divider>
 
           <v-card-text class="text--white subtitle-1">
-      <div>{{ estreno.titleingles }}</div>
-      <div>{{ estreno.estreno }}</div>
-      <div>{{ estreno.genero }}</div>
+      <div>{{ cartelera.titleingles }}</div>
+      <div>{{ cartelera.estreno }}</div>
+      <div>{{ cartelera.genero }}</div>
     </v-card-text>
 
     <v-divider></v-divider>
 
     <v-card-text class="text--white">
-      <div>{{ estreno.info1 }}</div>
-      <div>{{ estreno.info2 }}</div>
+      <div>{{ cartelera.info1 }}</div>
+      <div>{{ cartelera.info2 }}</div>
     </v-card-text>
       </div>
     </v-expand-transition>
@@ -46,8 +46,12 @@
 
 <script>
 export default {
-  props: ["estreno"],
+  props: ["cartelera"],
+  data: () => ({
+      show: false,
+    }),
 };
+
 </script>
 
 <style>
