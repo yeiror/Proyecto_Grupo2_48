@@ -1,22 +1,31 @@
 <template>
   <v-app>
     <v-main>
-      
-        <v-carousel>
-      <v-carousel-item
-      
-        v-for="(item,i) in items"
-        :key="i"
-        :src="item.src"
-      ></v-carousel-item>
-    </v-carousel>
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Bienvenido a nuestro catering </h3>
+        <p>¿Qué esperas para ordenar?</p>
+      </div>
+
+</section>
+
 
     
 
-
 <section class="products" id="products">
 
-  <h1 class="heading"> Nuestros productos <br></h1>
+  <h1 class="heading"> Nuestros productos </h1>
+  <li></li>
+
+    <v-container>
+      <v-row>
+        <v-col v-for="cartelera in carteleras" :key="cartelera.id" md="4">
+          <info-cartelera :cartelera="cartelera" />
+        </v-col>
+      </v-row>
+    </v-container>
+
 
   <div class="box-container">
 
@@ -35,7 +44,8 @@
               <div class="boton">
                    <v-row
                      align="center"
-                     justify="space-around" ><v-btn>Comprar</v-btn>
+                     justify="space-around" ><v-btn>
+                            <i class="mdi mdi-cart"></i>Comprar</v-btn>
                    </v-row>
               </div>
           </div>
@@ -57,7 +67,8 @@
               <div class="boton">
                    <v-row
                      align="center"
-                     justify="space-around" ><v-btn>Comprar</v-btn>
+                     justify="space-around" ><v-btn> 
+                    <i class="mdi mdi-cart"></i> Comprar</v-btn>
                    </v-row>
               </div>
       </div>
@@ -79,7 +90,8 @@
               <div class="boton">
                    <v-row
                      align="center"
-                     justify="space-around" ><v-btn>Comprar</v-btn>
+                     justify="space-around" ><v-btn> 
+                     <i class="mdi mdi-cart"></i> Comprar</v-btn>
                    </v-row>
               </div>
       </div>
@@ -99,7 +111,8 @@
               <div class="boton">
                    <v-row
                      align="center"
-                     justify="space-around" ><v-btn>Comprar</v-btn>
+                     justify="space-around" ><v-btn> 
+                     <i class="mdi mdi-cart"></i>Comprar</v-btn>
                    </v-row>
               </div>
     </div>
@@ -120,7 +133,8 @@
               <div class="boton">
                    <v-row
                      align="center"
-                     justify="space-around" ><v-btn>Comprar</v-btn>
+                     justify="space-around" ><v-btn> 
+                     <i class="mdi mdi-cart"></i> Comprar</v-btn>
                    </v-row>
               </div>
   </div>
@@ -128,12 +142,6 @@
   </div>
 
 </section>
-
-
-
-
-     
-
 
 
 
@@ -150,37 +158,18 @@ import foter from '../components/foter.vue'
 export default {
   components: { foter },
 
-
-
-  data () {
-    return {
-      items: [
-        {
-          src:"@/assets/CateringImagenes/Combo1.png"
- 
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
-        },
-
-      ]
-    }
-  }
-
-
-
-
 }
 
 </script>
 
 <style scoped>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+      }
+
 .box {
     background-color: #212529
     ;
@@ -229,10 +218,6 @@ a{
     padding:1rem 0;
     color:#eee;
 }
-
-
-
-
 section{
     padding:2rem 7%;
 }
@@ -281,16 +266,6 @@ section{
     color:rgb(255, 255, 255);
     font-size: 2.5rem;
 }
-
-.products .box-container .box .content .stars{
-    padding: 1.5rem;
-}
-
-.products .box-container .box .content .stars i{
-    font-size: 1.7rem;
-    color: var(--main-color);
-}
-
 .products .box-container .box .content .price{
     color:rgb(255, 255, 255);
     font-size: 2.5rem;
@@ -306,6 +281,7 @@ section{
     color: rgb(255, 255, 255);
     font-size: 20px; 
     font-weight: 500
+    
 }
 
 @media (max-width:991px){
@@ -320,6 +296,86 @@ section{
 
     section{
         padding:2rem;
+    }
+
+}
+
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+
+#menu-btn{
+    display: none;
+}
+
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:url(../assets/CateringImagenes/banner2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 60rem;
+}
+
+.home .content h3{
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color:#fff;
+}
+
+.home .content p{
+    font-size: 2rem;
+    font-weight: 100;
+    font-weight: bolder;
+    line-height: 1.8;
+    padding:1rem 0;
+    color:rgb(24, 17, 17)
+}
+
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+
+    .home .content p{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
     }
 
 }
