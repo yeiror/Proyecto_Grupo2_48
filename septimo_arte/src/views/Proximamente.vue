@@ -37,7 +37,7 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
+          
         },
         {
           id: 2,
@@ -50,7 +50,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 3,
@@ -63,7 +62,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 4,
@@ -76,7 +74,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 5,
@@ -89,7 +86,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 6,
@@ -102,7 +98,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 7,
@@ -115,7 +110,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 8,
@@ -128,7 +122,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 9,
@@ -141,7 +134,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 10,
@@ -154,7 +146,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 11,
@@ -167,7 +158,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
         {
           id: 12,
@@ -180,7 +170,6 @@ export default {
           info1: "Recomendada para Mayores de 12 años",
           info2: "163 Min",
           trailer: "https://www.youtube.com/watch?v=VYvmuz7ILvg",
-          reserva: "/Reserva",
         },
       ],
     };

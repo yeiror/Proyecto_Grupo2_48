@@ -9,7 +9,6 @@
 
 
  <v-card-actions>
-      <v-btn color="orange" text :to="estreno.reserva" link> Reservar </v-btn>
 
       <v-btn color="orange" text :href="estreno.trailer" target="_blank" link>
         Ver trailer
