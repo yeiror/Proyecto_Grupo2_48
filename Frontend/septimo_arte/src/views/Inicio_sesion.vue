@@ -1,10 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div class="catering">
-    <h1>This is an catering page</h1>
-  </div>
-</template>
-=======
   <v-app>
     <v-content>
       <v-container class="fill-height" fluid>
@@ -201,4 +195,3 @@ export default {
   },
 };
 </script>
->>>>>>> vista_login_sing_up

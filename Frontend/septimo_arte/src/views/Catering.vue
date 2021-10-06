@@ -1,7 +1,7 @@
 <template>
     <v-app>
       <v-main>
-  <section class="home" id="home">
+  <section class="home mx-10" id="home">
   
       <div class="content">
           <h3>Bienvenido a nuestro catering </h3>
