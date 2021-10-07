@@ -23,6 +23,12 @@
           <v-btn block href="/Inicio_sesion"> INICIAR SESION </v-btn>
            <div class="pa-2">
           <v-btn block href="/Registro"> REGISTRARSE </v-btn>
+          <div class="pa-2">
+          <v-btn block href="/RegistroPeliculas">REGISTRAR PELICULA</v-btn>
+           <div class="pa-2">
+          <v-btn block href="/ActualizacionPelicula">ACTUALIZAR PELICULA</v-btn>
+        </div>
+        </div>
         </div>
         </div>
       </template>

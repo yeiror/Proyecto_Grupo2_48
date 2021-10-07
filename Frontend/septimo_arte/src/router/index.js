@@ -36,6 +36,16 @@ const routes = [
     component: () => import( '../views/Registro.vue')
   },
   {
+    path: '/RegistroPeliculas',
+    name: 'RegistroPeliculas',
+    component: () => import( '../views/RegistroPeliculas.vue')
+  },
+  {
+    path: '/ActualizacionPelicula',
+    name: 'ActualizacionPelicula',
+    component: () => import( '../views/ActualizacionPelicula.vue')
+  },
+  {
     path: '/Reserva',
     name: 'Reserva',
     component: () => import( '../views/Reserva.vue')
