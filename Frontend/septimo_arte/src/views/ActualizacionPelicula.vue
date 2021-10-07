@@ -43,12 +43,13 @@
                         <h5 class="text-center">
                           Ingresa los detalles de la nueva pelicuala
                         </h5>
-                      </v-card-text>
-                      <div class="text-center">
-                        <v-btn rounded outlined dark @click="step--"
+                        <div class="text-center">
+                        <v-btn rounded outlined dark @click="step++"
                           >REGISTRAR NUEVA PELICULA</v-btn
                         >
                       </div>
+                      </v-card-text>
+                      
                     </v-col>
                   </v-row>
                 </v-window-item>
@@ -62,12 +63,13 @@
                         <h5 class="text-center">
                           Si solo quieres actualizar una pelicula existente accede por aqui! 
                         </h5>
-                      </v-card-text>
-                      <div class="text-center">
-                        <v-btn rounded outlined dark @click="step++"
+                        <div class="text-center">
+                        <v-btn rounded outlined dark @click="step--"
                           >ACTUALIZAR PELICULA</v-btn
                         >
                       </div>
+                      </v-card-text>
+                      
                     </v-col>
 
                     <v-col cols="12" md="8">
@@ -118,51 +120,77 @@
                             prepend-icon="mdi-camera"
                             color="warning accent-3"
                           ></v-file-input>
-                          <v-menu
-                          ref="menu"
-                          v-model="menu"
-                          :close-on-content-click="false"
-                          :return-value.sync="date"
-                          transition="scale-transition"
-                          offset-y
-                          min-width="auto"
-                          color="warning accent-3"
-                        >
-                          <template v-slot:activator="{ on, attrs }">
-                            <v-text-field
-                              v-model="date"
-                              label="Fecha de estreno"
-                              prepend-icon="mdi-calendar"
-                              readonly
-                              v-bind="attrs"
-                              v-on="on"
-                              color="warning accent-3"
-                            ></v-text-field>
-                          </template>
+                           <v-row>
+                             <v-col
+                              cols="12"
+                              sm="6"
+                            >
                           <v-date-picker
-                            v-model="date"
-                            no-title
-                            scrollable
+                              v-model="dates"
+                              range
+                              color="warning accent-3"
+                            ></v-date-picker>
+                          </v-col>
+                            <v-col
+                              cols="12"
+                              sm="6"
+                            >
+                            <v-text-field
+                              v-model="dateRangeText"
+                              label="Estreno y ultima presentacion"
+                              prepend-icon="mdi-calendar"
+                              color="warning accent-3"
+                              readonly
+                            ></v-text-field>
+                            model: {{ dates }}
+                            </v-col>
+                            </v-row>
+                        <v-combobox
+                            v-model="model"
+                            :items="items2"
+                            :search-input.sync="search"
+                            hide-selected
+                            hint="Maximum of 5 tags"
+                            label="Idiomas"
+                            prepend-icon="mdi-chat-question"
                             color="warning accent-3"
+                            multiple
+                            persistent-hint
+                            small-chips
                           >
-                            <v-spacer></v-spacer>
-                            <v-btn
-                              text
-                              color="warning accent-3"
-                              @click="menu = false"
-                            >
-                              Cancel
-                            </v-btn>
-                            <v-btn
-                              text
-                              color="warning accent-3"
-                              @click="$refs.menu.save(date)"
-                              
-                            >
-                              OK
-                            </v-btn>
-                          </v-date-picker>
-                        </v-menu>
+                            <template v-slot:no-data>
+                              <v-list-item>
+                                <v-list-item-content>
+                                  <v-list-item-title>
+                                    No results matching "<strong>{{ search }}</strong>". Press <kbd>enter</kbd> to create a new one
+                                  </v-list-item-title>
+                                </v-list-item-content>
+                              </v-list-item>
+                            </template>
+                          </v-combobox>
+                           <v-combobox
+                            v-model="model2"
+                            :items="items3"
+                            :search-input.sync="search"
+                            hide-selected
+                            hint="Maximum of 5 tags"
+                            label="Actores"
+                            prepend-icon="mdi-account-star"
+                            color="warning accent-3"
+                            multiple
+                            persistent-hint
+                            small-chips
+                          >
+                            <template v-slot:no-data>
+                              <v-list-item>
+                                <v-list-item-content>
+                                  <v-list-item-title>
+                                    No results matching "<strong>{{ search }}</strong>". Press <kbd>enter</kbd> to create a new one
+                                  </v-list-item-title>
+                                </v-list-item-content>
+                              </v-list-item>
+                            </template>
+                          </v-combobox>
                         <v-textarea
                             counter
                             label="Descripcion"
@@ -171,13 +199,15 @@
                             type="text"
                             color="warning accent-3"
                             ></v-textarea>
+                            
                         </v-form>
-                      </v-card-text>
-                      <div class="text-center mt-n5 pa-3">
+                        <div class="text-center mt-n5 pa-3">
                         <v-btn rounded color="warning accent-3" dark
                           >REGISTRAR PELICULA</v-btn
                         >
                       </div>
+                      </v-card-text>
+                      
                     </v-col>
                   </v-row>
                 </v-window-item>
@@ -202,11 +232,29 @@ export default {
           '4D',
           '4Dx',
         ],
-      date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+      dates: ['2021-09-10', '2021-09-20'],
+      
       menu: false,
       modal: false,
       menu2: false,
+      items2: ['Espanol', 'Ingles', 'Frances', 'Ruso'],
+      model: ['Idiomas'],
+      items3: ['Denzel Washinton', 'Keanu Reeves', 'Johnny Depp', 'Will Smith'],
+      model2: ['Actores'],
+      search: null,
   }),
+  watch: {
+      model (val) {
+        if (val.length > 5) {
+          this.$nextTick(() => this.model.pop())
+        }
+      },
+    },
+    computed: {
+      dateRangeText () {
+        return this.dates.join(' ~ ')
+      },
+    },
 
   props: {
     source: String,
