@@ -46,6 +46,9 @@
 <script>
 export default {
   props: ["estreno"],
+  data: () => ({
+      show: false,
+    }),
 };
 </script>
 
