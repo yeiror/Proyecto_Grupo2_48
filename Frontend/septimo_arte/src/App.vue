@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer app v-model="drawer" class="black accent-4" dark>
+    <v-navigation-drawer app v-model="drawer" class="gray accent-3" dark>
       <v-list>
         <v-list-item
           v-for="item in items"
@@ -9,7 +9,7 @@
           link
         >
           <v-list-item-icon>
-            <v-icon color="warning">{{ item.icon }}</v-icon>
+            <v-icon color="yellow accent-4">{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
@@ -20,31 +20,44 @@
 
       <template v-slot:append>
         <div class="pa-2">
-          <v-btn block href="/Inicio_sesion"> INICIAR SESION </v-btn></div>
+          <v-btn rounded outlined color="yellow accent-4" dark block href="/Inicio_sesion"> 
+          INICIAR SESION </v-btn></div>
            <div class="pa-2">
-          <v-btn block href="/Registro"> REGISTRARSE </v-btn></div>
+          <v-btn rounded outlined color="yellow accent-4" dark block href="/Registro"> 
+          REGISTRARSE </v-btn></div>
           <div class="pa-2">
-          <v-btn block href="/RegistroPeliculas">REGISTRAR PELICULA</v-btn></div>
+          <v-btn rounded outlined color="yellow accent-4" dark block href="/RegistroPeliculas">
+          REGISTRAR PELICULA</v-btn></div>
            <div class="pa-2">
-          <v-btn block href="/ActualizacionPelicula">ACTUALIZAR PELICULA</v-btn></div>
+          <v-btn rounded outlined color="yellow accent-4" dark block href="/ActualizacionPelicula">
+          ACTUALIZAR PELICULA</v-btn></div>
         <div class="pa-2">
-          <v-btn block href="/RegistroComida">REGISTRAR CATERING</v-btn></div>
+          <v-btn rounded outlined color="yellow accent-4" dark block href="/RegistroComida">
+          REGISTRAR CATERING</v-btn></div>
            <div class="pa-2">
-          <v-btn block href="/ActualizacionComida">ACTUALIZAR CATERING</v-btn></div>
+          <v-btn rounded outlined color="yellow accent-4" dark block href="/ActualizacionComida">
+          ACTUALIZAR CATERING</v-btn></div>
       </template>
     </v-navigation-drawer>
 
-    <v-app-bar dark app color="black">
+    <v-app-bar dark app color="gray accent-4">
       <v-app-bar-nav-icon
         @click="drawer = !drawer"
-        color="warning"
+        color="yellow accent-4"
       ></v-app-bar-nav-icon>
 
       <v-avatar :tile="true">
         <img :src="require('@/assets/logos/02.logo.png')" alt="logo" />
       </v-avatar>
 
-      <v-toolbar-title>SEPTIMO ARTE</v-toolbar-title>
+      <v-toolbar-title>
+        
+        <v-p style = "font-family:Brush Script MT">
+       SEPTIMO ARTE<br>
+       Vive el Cine
+        </v-p>
+        
+      </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
 

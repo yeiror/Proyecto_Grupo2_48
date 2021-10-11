@@ -134,7 +134,7 @@
                         </v-form>
                       </v-card-text>
                       <br>
-                      <v-row>
+                      <v-row align="center" justify="center">
                       <div class="text-center mt-n5 pa-3">
                         <v-btn rounded outlined color="yellow accent-4" dark
                           >ENVIAR</v-btn
@@ -146,6 +146,7 @@
                         </router-link>
                       </div>
                       </v-row>
+                      <br>
                     </v-col>
                   </v-row>
                 </v-window-item>
