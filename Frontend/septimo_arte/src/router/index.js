@@ -41,6 +41,16 @@ const routes = [
     component: () => import( '../views/RegistroPeliculas.vue')
   },
   {
+    path: '/RegistroComida',
+    name: 'RegistroComida',
+    component: () => import( '../views/RegistroComida.vue')
+  },
+  {
+    path: '/ActualizacionComida',
+    name: 'ActualizacionComida',
+    component: () => import( '../views/ActualizacionComida.vue')
+  },
+  {
     path: '/ActualizacionPelicula',
     name: 'ActualizacionPelicula',
     component: () => import( '../views/ActualizacionPelicula.vue')

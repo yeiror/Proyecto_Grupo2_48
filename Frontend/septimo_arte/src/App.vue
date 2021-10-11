@@ -20,17 +20,17 @@
 
       <template v-slot:append>
         <div class="pa-2">
-          <v-btn block href="/Inicio_sesion"> INICIAR SESION </v-btn>
+          <v-btn block href="/Inicio_sesion"> INICIAR SESION </v-btn></div>
            <div class="pa-2">
-          <v-btn block href="/Registro"> REGISTRARSE </v-btn>
+          <v-btn block href="/Registro"> REGISTRARSE </v-btn></div>
           <div class="pa-2">
-          <v-btn block href="/RegistroPeliculas">REGISTRAR PELICULA</v-btn>
+          <v-btn block href="/RegistroPeliculas">REGISTRAR PELICULA</v-btn></div>
            <div class="pa-2">
-          <v-btn block href="/ActualizacionPelicula">ACTUALIZAR PELICULA</v-btn>
-        </div>
-        </div>
-        </div>
-        </div>
+          <v-btn block href="/ActualizacionPelicula">ACTUALIZAR PELICULA</v-btn></div>
+        <div class="pa-2">
+          <v-btn block href="/RegistroComida">REGISTRAR CATERING</v-btn></div>
+           <div class="pa-2">
+          <v-btn block href="/ActualizacionComida">ACTUALIZAR CATERING</v-btn></div>
       </template>
     </v-navigation-drawer>
 

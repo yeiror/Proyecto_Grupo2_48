@@ -3,10 +3,10 @@
     <v-content>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
-          <v-col cols="12" sm="8" md="9">
+          <v-col cols="12" sm="8" md="12">
             <v-card class="elevation-12" dark>
               <v-window v-model="step">
-                <v-window-item :value="2">
+                <v-window-item :value="1">
                   <v-row>
                     <v-col cols="12" md="8">
                       <v-card-text class="mt-12">
@@ -14,8 +14,8 @@
                           class="
                             text-center
                             display-2
-                            warning--text
-                            text--accent-3
+                            yellow--text
+                            text--accent-4
                           "
                         >
                           Atualizar Pelicual
@@ -27,17 +27,26 @@
                             name="filmName"
                             prepend-icon="mdi-movie"
                             type="text"
-                            color="warning accent-3"
+                            color="yellow accent-4"
                           />
                         </v-form>
                       </v-card-text>
-                      <div class="text-center pa-3 mt-3">
-                        <v-btn rounded color="warning accent-3" dark
+                      <v-row align="center" justify="center">
+                      <div class="text-center pa-3 mt-n5">
+                        <v-btn rounded outlined color="yellow accent-4" dark
                           >BUSCAR</v-btn
                         >
+                        
                       </div>
+                       <div class="text-center mt-n5 pa-3">
+                      <router-link to="/" style="text-decoration:none">
+                        <v-btn rounded outlined dark color="#FFDB58" > CANCELAR </v-btn>
+                        </router-link>
+                      </div>
+                      </v-row>
+                      <br>
                     </v-col>
-                    <v-col cols="12" md="4" class="warning accent-3">
+                    <v-col cols="12" md="4" class="yellow accent-4">
                       <v-card-text class="white--text mt-12">
                         <h1 class="text-center display-1">Bienvenido!</h1>
                         <h5 class="text-center">
@@ -45,7 +54,7 @@
                         </h5>
                         <div class="text-center">
                         <v-btn rounded outlined dark @click="step++"
-                          >REGISTRAR NUEVA PELICULA</v-btn
+                          >REGISTRAR PELICULA</v-btn
                         >
                       </div>
                       </v-card-text>
@@ -53,9 +62,9 @@
                     </v-col>
                   </v-row>
                 </v-window-item>
-                <v-window-item :value="1">
+                <v-window-item :value="2">
                   <v-row class="fill-height">
-                    <v-col cols="12" md="4" class="warning accent-3">
+                    <v-col cols="12" md="4" class="yellow accent-4">
                       <v-card-text class="white--text mt-12">
                         <h1 class="text-center display-1">
                           Hola!
@@ -78,11 +87,11 @@
                           class="
                             text-center
                             display-2
-                            warning--text
-                            text--accent-3
+                            yellow--text
+                            text--accent-4
                           "
                         >
-                          Registrar Nueva Pelicula.
+                          Registrar Nueva Pelicula
                         </h1>
                        
                         <h4 class="text-center mt-4">
@@ -94,7 +103,7 @@
                             name="filmTitle"
                             prepend-icon="mdi-movie-open"
                             type="text"
-                            color="warning accent-3"
+                            color="yellow accent-4"
                           />
 
                           <v-select
@@ -102,7 +111,7 @@
                             name="clasification"
                             :items="Tipo"
                             prepend-icon="mdi-account-filter-outline"
-                            color="warning accent-3"
+                            color="yellow accent-4"
                           />
                           <v-combobox
                             v-model="select"
@@ -110,7 +119,7 @@
                             label="Formato"
                             prepend-icon="mdi-motion-play"
                             type="text"
-                            color="warning accent-3"
+                            color="yellow accent-4"
                             multiple
                             chips
                           ></v-combobox>
@@ -118,7 +127,7 @@
                             accept="image/*"
                             label="Portada"
                             prepend-icon="mdi-camera"
-                            color="warning accent-3"
+                            color="yellow accent-4"
                           ></v-file-input>
                            <v-row>
                              <v-col
@@ -128,7 +137,7 @@
                           <v-date-picker
                               v-model="dates"
                               range
-                              color="warning accent-3"
+                              color="yellow accent-4"
                             ></v-date-picker>
                           </v-col>
                             <v-col
@@ -139,7 +148,7 @@
                               v-model="dateRangeText"
                               label="Estreno y ultima presentacion"
                               prepend-icon="mdi-calendar"
-                              color="warning accent-3"
+                              color="yellow accent-4"
                               readonly
                             ></v-text-field>
                             model: {{ dates }}
@@ -153,7 +162,7 @@
                             hint="Maximum of 5 tags"
                             label="Idiomas"
                             prepend-icon="mdi-chat-question"
-                            color="warning accent-3"
+                            color="yellow accent-4"
                             multiple
                             persistent-hint
                             small-chips
@@ -176,7 +185,7 @@
                             hint="Maximum of 5 tags"
                             label="Actores"
                             prepend-icon="mdi-account-star"
-                            color="warning accent-3"
+                            color="yellow accent-4"
                             multiple
                             persistent-hint
                             small-chips
@@ -197,15 +206,23 @@
                             name="descrition"
                             prepend-icon="mdi-comment"
                             type="text"
-                            color="warning accent-3"
+                            color="yellow accent-3"
                             ></v-textarea>
                             
                         </v-form>
+                        <br>
+                        <v-row align="center" justify="center">
                         <div class="text-center mt-n5 pa-3">
-                        <v-btn rounded color="warning accent-3" dark
+                        <v-btn rounded outlined color="yellow accent-4" dark
                           >REGISTRAR PELICULA</v-btn
                         >
                       </div>
+                      <div class="text-center mt-n5 pa-3">
+                      <router-link to="/" style="text-decoration:none">
+                        <v-btn rounded outlined dark color="yellow accent-4" > CANCELAR </v-btn>
+                        </router-link>
+                      </div>
+                      </v-row>
                       </v-card-text>
                       
                     </v-col>
