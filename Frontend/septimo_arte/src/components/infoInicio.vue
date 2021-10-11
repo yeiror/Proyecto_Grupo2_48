@@ -1,11 +1,20 @@
 <template>
   <v-container>
     <v-row dense>
-      <v-col v-for="(item, i) in items" :key="i" cols="12">
-        <v-card :color="item.color" dark>
+      <v-col v-for="(item, i) in items" :key="i" cols="4">
+        
+        <v-card :color="item.color" dark align="center" justify="center">
+          
           <div class="d-flex flex-no-wrap justify-space-between">
+            
             <div>
-              <v-card-title class="text-h6" v-text="item.title"></v-card-title>
+              
+            <v-avatar  class="ma-3" size="270" tile>
+              <v-img :src="item.src"></v-img>
+            </v-avatar>
+            
+              <v-card-title 
+              class="text-h6" v-text="item.title"></v-card-title>
 
               <v-card-subtitle
                 class="text-overline"
@@ -20,17 +29,17 @@
                   small
                   :to="item.page"
                   link
+                  dark 
+                  color="yellow accent-4"
+                  aling="center"
                 >
                   VER MAS
                 </v-btn>
               </v-card-actions>
             </div>
-
-            <v-avatar class="ma-3" size="200" tile>
-              <v-img :src="item.src"></v-img>
-            </v-avatar>
           </div>
         </v-card>
+        
       </v-col>
     </v-row>
   </v-container>
