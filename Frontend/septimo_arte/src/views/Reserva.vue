@@ -13,7 +13,7 @@
     <v-card-title class="text-h6 font-weight-regular justify-space-between">
       <span>{{ currentTitle }}</span>
       <v-avatar
-        color="warning"
+        color="yellow accent-4"
         class="subheading white--text"
         size="24"
         v-text="step"
@@ -84,7 +84,7 @@ Selecciona la cantidad de boletas a reservar          </span>
         
       <v-chip-group
         v-model="selection"
-        active-class="warning accent-4 white--text "
+        active-class="yellow accent-4 white--text "
         column
         
       >
@@ -106,13 +106,13 @@ Selecciona la cantidad de boletas a reservar          </span>
 
       <v-window-item :value="3">
         <v-row justify="center">
-    <v-date-picker v-model="picker" color="warning"></v-date-picker>
+    <v-date-picker v-model="picker" color="yellow accent-4"></v-date-picker>
   </v-row>
         <v-card-text >
         
       <v-chip-group
         v-model="selection"
-        active-class="warning accent-4 white--text "
+        active-class="yellow accent-4 white--text "
         column
         
       >
@@ -136,6 +136,106 @@ Selecciona la cantidad de boletas a reservar          </span>
       </v-window-item>
 
       <v-window-item :value="4">
+        <div class="pa-4 text-center">Pantalla
+          <v-img
+            class="mb-4"
+            contain
+            height="150"
+            :src="require('@/assets/logos/pantalla.jpg')" alt="pantalla"
+          ></v-img>Reserva la mejor posicion
+      <v-divider class="my-2"></v-divider>
+      <v-row align="center" justify="center">
+      <v-item-group multiple>
+        A
+        <v-item
+          v-for="n in 10"
+          :key="n"
+          v-slot="{ active, toggle }"
+        >
+          <v-chip
+            active-class="yellow--text"
+            :input-value="active"
+            @click="toggle"
+          >
+            {{ n }}
+          </v-chip>
+        </v-item>
+      </v-item-group>
+    </v-row>
+    <v-row align="center" justify="center">
+      <v-item-group multiple>B
+        <v-item
+          v-for="n in 10"
+          :key="n"
+          v-slot="{ active, toggle }"
+        >
+          <v-chip
+            active-class="yellow--text"
+            :input-value="active"
+            @click="toggle"
+          >
+            {{ n }}
+          </v-chip>
+        </v-item>
+      </v-item-group>
+    </v-row>
+    <v-row align="center" justify="center">
+      <v-item-group multiple>C
+        <v-item
+          v-for="n in 10"
+          :key="n"
+          v-slot="{ active, toggle }"
+        >
+          <v-chip
+            active-class="yellow--text"
+            :input-value="active"
+            @click="toggle"
+          >
+            {{ n }}
+          </v-chip>
+        </v-item>
+      </v-item-group>
+    </v-row>
+    <v-row align="center" justify="center">
+      <v-item-group multiple>D
+        <v-item
+          v-for="n in 10"
+          :key="n"
+          v-slot="{ active, toggle }"
+        >
+          <v-chip
+            active-class="yellow--text"
+            :input-value="active"
+            @click="toggle"
+          >
+            {{ n }}
+          </v-chip>
+        </v-item>
+      </v-item-group>
+    </v-row>
+    <v-row align="center" justify="center">
+      <v-item-group multiple>E
+        <v-item
+          v-for="n in 10"
+          :key="n"
+          v-slot="{ active, toggle }"
+        >
+          <v-chip
+            active-class="yellow--text"
+            :input-value="active"
+            @click="toggle"
+          >
+            {{ n }}
+          </v-chip>
+        </v-item>
+      </v-item-group>
+    </v-row>
+    <br>
+    <v-divider></v-divider>
+          <span class="text-caption grey--text">Gracias por divertirte con septimo arte!</span>
+        </div>
+      </v-window-item>
+      <v-window-item :value="5">
         <div class="pa-4 text-center">
           <v-img
             class="mb-4"
@@ -163,8 +263,8 @@ Selecciona la cantidad de boletas a reservar          </span>
       </v-btn>
       <v-spacer></v-spacer>
       <v-btn
-        :disabled="step === 4"
-        color="warning"
+        :disabled="step === 5"
+        color="yellow accent-4"
         depressed
         @click="step++"
       >
@@ -196,9 +296,10 @@ Selecciona la cantidad de boletas a reservar          </span>
       currentTitle () {
         switch (this.step) {
           case 1: return 'Bienvenido Realiza tu reserva'
-                    case 2: return 'Cantidad de boletas'
+          case 2: return 'Cantidad de boletas'
 
           case 3: return 'Seleccione el horario'
+          case 4: return 'Escoge tu silla'
           default: return 'Reserva exitosa'
         }
       },

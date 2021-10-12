@@ -9,9 +9,9 @@
   
 
     <v-card-actions>
-      <v-btn color="orange" text :to="cartelera.reserva" link> Reservar </v-btn>
+      <v-btn color="yellow accent-4" text :to="cartelera.reserva" link> Reservar </v-btn>
 
-      <v-btn color="orange" text :href="cartelera.trailer" target="_blank" link>
+      <v-btn color="yellow accent-4" text :href="cartelera.trailer" target="_blank" link>
         Ver trailer
       </v-btn>
       <v-spacer></v-spacer>
