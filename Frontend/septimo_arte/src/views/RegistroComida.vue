@@ -87,6 +87,7 @@
                         </h4>
                         <v-form>
                           <v-text-field
+                          v-model="comboName"
                             label="Combo"
                             name="comboName"
                             prepend-icon="mdi-food"
@@ -95,6 +96,7 @@
                           />
 
                          <v-text-field
+                         v-model="price"
                             label="Precio"
                             name="Price"
                             prepend-icon="mdi-currency-usd"
@@ -102,6 +104,7 @@
                             color="#F4D03F"
                           />
                           <v-file-input
+                          v-model="foto"
                             accept="image/*"
                             label="Foto"
                             color="#F4D03F"
@@ -109,7 +112,8 @@
                         ></v-file-input>
 
                          <v-combobox
-                        v-model="model"
+
+                        v-model="descripcion"
                         :items="items"
                         :search-input.sync="search"
                         hide-selected
@@ -142,7 +146,7 @@
                       </div>
                        <div class="text-center mt-n5 pa-3">
                       <router-link to="/" style="text-decoration:none">
-                        <v-btn rounded outlined dark color="#FFDB58" > CANCELAR </v-btn>
+                        <v-btn rounded outlined dark color="yellow accent-4" > CANCELAR </v-btn>
                         </router-link>
                       </div>
                       </v-row>
@@ -160,6 +164,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data: () => ({
     step: 1,
