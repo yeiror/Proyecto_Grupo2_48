@@ -1,6 +1,5 @@
 const express = require('express');
 
-
 const cateringRouter = require('./catering.router');
 const userRouter = require('./users.router');
 const peliculasRouter = require('./peliculas.router');

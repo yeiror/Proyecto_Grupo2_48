@@ -1,41 +1,50 @@
 const express = require('express');
-const faker = require('faker');
+
+const CateringService = require('./../services/catering.services.js');
 
 const router = express.Router();
+const service = new CateringService;
 
-router.get('/', (req, res)=>{
-    
-    const products = [];
-    const { size } = req.query;
-    const limit = size || 10;
-    for (let index = 0; index < limit; index++) {
-        products.push({
-        nombre: faker.commerce.productName(),
-        precio: parseInt(faker.commerce.price(), 10),
-        imagen: faker.image.imageUrl(),
-        });
-    }
-    res.json(products);
+router.get('/', (req, res)=>{    
+    const comida = service.generate();
+    res.json(comida);   
 });
 
-router.get('/filter',(req,res)=>{
-    res.send("Yo soy un filterrr");
-});
 
-/*router.get('/:name',(req,res)=>{
+router.get('/:id',(req,res)=>{
+    const limit = 100;
+    const productos = [];
     const { id } = req.params;
-    res.json({
-        nombre:"Comida 1",
-        precio:300
-    });
-});*/
+    for (i=0;i<100;i++){
+        productos.push(id[i]);
+    }
+    res.json(productos)
+});
 
-    router.post('/',(req, res)=>{
+router.post('/',(req, res)=>{
         const body = req.body;
-        res.json({
+        res.status(201).json({
             message:"Creado exitosamente",
             data: body
         });
-    })
+    });
+
+    router.patch('/:id', (req, res)=>{
+        const { id } = req.params
+        const body = req.body;
+        res.json({
+            message: 'partially updated',
+            data: body,
+            id 
+        });
+    });
+
+    router.delete('/:id', (req, res)=>{
+        const { id } = req.params
+        res.json({
+            message: 'partially updated',
+            id 
+        });
+    });
 
 module.exports = router;
