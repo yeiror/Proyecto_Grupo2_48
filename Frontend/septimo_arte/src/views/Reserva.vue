@@ -1,5 +1,5 @@
 <template>
-   <v-app>
+  <v-app>
     <v-content>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
@@ -280,29 +280,32 @@ Selecciona la cantidad de boletas a reservar          </span>
 </template>
 
 <script>
-  export default {
+export default {
+  data: () => ({
+    step: 1,
+    pelicula: ["Sin Tiempo para morir", "Memoria", "Los Santos de la Mafia", "La ultima Estafa", "Shang-Chi", "Peter Rabbit 2", "Tantas Almas" , " La Casa Oscura"],
+    picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+      .toISOString()
+      .substr(0, 10),
+    min: 0,
+    max: 10,
+    range: [0, 0],
+  }),
 
-    data: () => ({
-      step: 1,
-    pelicula: ["pelicula1", "pelicula2", "Pelicula3", "pelicula4", "pelicula5"],
-            picker: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-            min: 0,
-        max: 10,
-        range: [0,0],
+  computed: {
+    currentTitle() {
+      switch (this.step) {
+        case 1:
+          return "Bienvenido Realiza tu reserva";
+        case 2:
+          return "Cantidad de boletas";
 
-    }),
-
-    computed: {
-      currentTitle () {
-        switch (this.step) {
-          case 1: return 'Bienvenido Realiza tu reserva'
-          case 2: return 'Cantidad de boletas'
-
-          case 3: return 'Seleccione el horario'
-          case 4: return 'Escoge tu silla'
-          default: return 'Reserva exitosa'
-        }
-      },
+        case 3:
+          return "Seleccione el horario";
+        default:
+          return "Reserva exitosa";
+      }
     },
-  }
+  },
+};
 </script>
