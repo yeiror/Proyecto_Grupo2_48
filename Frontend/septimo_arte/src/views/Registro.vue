@@ -219,12 +219,25 @@ export default {
   }),
 methods:{
 register(){
-  axios.post('http://localhost:3000/'){
-    name: this.name
-  }
+  axios.post('http://localhost:3000/api/v1/users',{
+    nombre: this.name,
+    documento: this.document,
+    correo: this.mail,
+    contrasena: this.pass,
+    celular: this.phone
+
+
+  })
+  .then(response =>{
+    console.log(response.data);
+  })
+  .catch(err =>{
+    console.log(err);
+  });
+  this.$router.push("/Inicio_sesion");
 }
 
-}
+},
   props: {
     source: String,
   },
