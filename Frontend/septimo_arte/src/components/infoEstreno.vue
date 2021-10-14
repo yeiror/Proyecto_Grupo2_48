@@ -10,7 +10,7 @@
 
  <v-card-actions>
 
-      <v-btn color="orange" text :href="estreno.trailer" target="_blank" link>
+      <v-btn color="yellow accent-4" text :href="estreno.trailer" target="_blank" link>
         Ver trailer
       </v-btn>
       <v-spacer></v-spacer>
