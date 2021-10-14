@@ -1,50 +1,80 @@
 const express = require('express');
-
-const CateringService = require('./../services/catering.services.js');
-
 const router = express.Router();
-const service = new CateringService;
 
-router.get('/', (req, res)=>{    
-    const comida = service.generate();
-    res.json(comida);   
-});
+import catering from '../model/catering.model';
 
-
-router.get('/:id',(req,res)=>{
-    const limit = 100;
-    const productos = [];
-    const { id } = req.params;
-    for (i=0;i<100;i++){
-        productos.push(id[i]);
+router.post('/', async(req, res)=>{
+    const body = req.body;
+    try{
+        const cateringDB = await catering.create(body);
+        res.status(200).json(cateringDB);
+    } catch (error){
+        return res.status(500).json({
+            mensaje:'Ocurrió un error',
+            error
+        })
     }
-    res.json(productos)
+}); 
+
+router.get('/', async(req, res) =>{
+    try{
+         const cateringDB = await catering.find();
+         res.json(cateringDB);
+     }
+     catch (error) {
+         return res.status(400).json({
+             mensaje: 'Ocurrió un error',
+             error
+         });
+     }
+ });
+
+ router.get('/:id', async(req, res) =>{
+    const _id= req.params.id;
+    try{
+         const cateringDB = await catering.findOne({_id});
+         res.json(cateringDB);
+     }
+     catch (error) {
+         return res.status(400).json({
+             mensaje: 'Ocurrió un error',
+             error
+         });
+     }
+ });
+
+router.delete('/:id', async(req, res) =>{
+    const _id= req.params.id;
+    try{
+         const cateringDB = await catering.findByIdAndDelete({_id});
+         if(!cateringDB){
+            return res.status(400).json({
+                mensaje:'No se encontró el id solicitado',
+                error
+            }) 
+         }
+         res.json(cateringDB);
+     }
+     catch (error) {
+         return res.status(400).json({
+             mensaje: 'Ocurrió un error',
+             error
+         });
+     }
+ });
+
+ router.patch('/:id', async(req, res)=>{
+    const { id } = req.params;
+    const body = req.body;
+    try{
+        const cateringDB = await catering.updateOne(body);
+        res.status(200).json(cateringDB);
+    } catch (error){
+        return res.status(500).json({
+            mensaje:'Ocurrió un error',
+            error
+        })
+    }
 });
-
-router.post('/',(req, res)=>{
-        const body = req.body;
-        res.status(201).json({
-            message:"Creado exitosamente",
-            data: body
-        });
-    });
-
-    router.patch('/:id', (req, res)=>{
-        const { id } = req.params
-        const body = req.body;
-        res.json({
-            message: 'partially updated',
-            data: body,
-            id 
-        });
-    });
-
-    router.delete('/:id', (req, res)=>{
-        const { id } = req.params
-        res.json({
-            message: 'partially updated',
-            id 
-        });
-    });
 
 module.exports = router;
