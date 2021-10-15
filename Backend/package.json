@@ -8,7 +8,8 @@
     "start": "node index.js",
     "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devbabel": "nodemon index.js --exec babel-node"
+    "devbabel": "nodemon index.js --exec babel-node",
+    "deploy": "cd .. && git subtree push --prefix back heroku master"
   },
   "keywords": [],
   "author": "",
