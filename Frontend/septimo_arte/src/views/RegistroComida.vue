@@ -135,6 +135,12 @@
                             </v-list-item>
                         </template>
                         </v-combobox>
+                        <v-switch
+                        color="yellow accent-4"
+                        v-model="available"
+                        inset
+                        :label="`disponible: ${available.toString()}`"
+                      ></v-switch>
                         </v-form>
                       </v-card-text>
                       <br>
@@ -177,6 +183,7 @@ export default {
       price:"",
       photo:"",
       description:"",
+      available:"",
   }),
 
   methods:{
@@ -186,6 +193,7 @@ registerFood(){
     precio: this.price,
     foto: this.photo,
     descripcion: this.description,
+    activo: this.available,
   })
   .then(response =>{
     console.log(response.data);

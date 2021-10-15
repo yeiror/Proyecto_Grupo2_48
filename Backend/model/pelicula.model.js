@@ -9,6 +9,7 @@ const peliSchema = new Schema({
     sala: Number,
     formatos: Array,
     actores: Array,
+    idioma: Array,
     activo: {type: Boolean, default: true} 
 
 });

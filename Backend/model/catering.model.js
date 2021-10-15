@@ -5,8 +5,8 @@ const CateringSchema = new Schema({
     descripcion: Array, 
     precio: Number,
     foto: String,
-    activo: {type: Boolean, default: true}, 
-    IDcomida: String,
+    activo: {type: Boolean, default: true} 
+    
 });
 
 // Convertir a modelo 

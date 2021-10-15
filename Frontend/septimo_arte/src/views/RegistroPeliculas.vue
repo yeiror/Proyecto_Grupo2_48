@@ -214,14 +214,25 @@
                           </v-combobox>
                         <v-textarea
                         v-model="desciptions"
-                            counter
-                            label="Descripcion"
-                            name="descrition"
-                            prepend-icon="mdi-comment"
-                            type="text"
-                            color="yellow accent-3"
-                            ></v-textarea>
-                            
+                        counter
+                        label="Descripcion"
+                        name="descrition"
+                        prepend-icon="mdi-comment"
+                        type="text"
+                        color="yellow accent-3"
+                        ></v-textarea>
+                        <v-select
+                        v-model="gender"
+                        :items="items4"
+                        label="Genero"
+                        color="yellow accent-4"
+                      ></v-select>
+                        <v-switch
+                        color="yellow accent-4"
+                        v-model="available"
+                        inset
+                        :label="`disponible: ${available.toString()}`"
+                      ></v-switch>
                         </v-form>
                         <br>
                         <v-row align="center" justify="center">
@@ -272,6 +283,7 @@ export default {
       items2: ['Espanol', 'Ingles', 'Frances', 'Ruso'],
       
       items3: ['Denzel Washinton', 'Keanu Reeves', 'Johnny Depp', 'Will Smith'],
+      items4: ['Accion', 'Drama', 'Terror', 'suspenso'],
       
       search: null,
       title:"",
@@ -281,7 +293,8 @@ export default {
       languajes:"",
       actors:"",
       descriptions:"",
-
+      available:"",
+      gender:"",
     }),
   methods:{
   registerfilm(){
@@ -293,8 +306,9 @@ export default {
       sala: this.room,
       descripcion: this.descriptions,
       actores: this.actors,
-      //genero: this.gender,
-
+      genero: this.gender,
+      activo: this.available,
+      idioma: this.languajes,
 
     })
     .then(response =>{
