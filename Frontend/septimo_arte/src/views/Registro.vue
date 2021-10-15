@@ -128,6 +128,7 @@
                         </h4>
                         <v-form>
                           <v-text-field
+                          v-model="name"
                             label="Nombre completo"
                             name="full_name"
                             prepend-icon="mdi-account"
@@ -136,6 +137,7 @@
                           />
 
                           <v-select
+                          v-model="documentType"
                             label="Tipo de documento"
                             name="document type"
                             :items="Tipo"
@@ -144,6 +146,7 @@
                           />
 
                           <v-text-field
+                          v-model="document"
                             label="Documento"
                             name="document"
                             prepend-icon="mdi-card-account-details"
@@ -151,6 +154,7 @@
                             color="yellow accent-4"
                           />
                           <v-text-field
+                          v-model="phone"
                             label="Celular"
                             name="mobile"
                             prepend-icon="mdi-phone"
@@ -158,6 +162,7 @@
                             color="yellow accent-4"
                           />
                           <v-text-field
+                          v-model="mail"
                             label="Correo"
                             name="Email"
                             prepend-icon="mdi-email"
@@ -165,6 +170,7 @@
                             color="yellow accent-4"
                           />
                           <v-text-field
+                          v-model="pass"
                             id="password"
                             label="Contraseña"
                             name="password"
@@ -176,7 +182,7 @@
                       </v-card-text>
                       <v-row align="center" justify="center">
                       <div class="text-center mt-n5 pa-3">
-                        <v-btn rounded outlined color="yellow accent-4" dark
+                        <v-btn id="registrar" @click="register" outlined color="yellow accent-4" dark 
                           >CREAR CUENTA</v-btn
                         >
                       </div>
@@ -199,14 +205,42 @@
 </template>
 
 <script>
+ import axios from "axios";
 export default {
+
   data: () => ({
     step: 1,
     Tipo: ["Cedula", "Tarjeta de identidad", "Pasaporte", "NIT"],
+    name:"",
+    document:"",
+    phone:"",
+    mail:"",
+    pass:"",
   }),
+methods:{
+register(){
+  axios.post('http://localhost:3000/api/v1/users',{
+    nombre: this.name,
+    documento: this.document,
+    correo: this.mail,
+    contrasena: this.pass,
+    celular: this.phone
 
+
+  })
+  .then(response =>{
+    console.log(response.data);
+  })
+  .catch(err =>{
+    console.log(err);
+  });
+  this.$router.push("/Inicio_sesion");
+}
+
+},
   props: {
     source: String,
   },
+  
 };
 </script>

@@ -87,6 +87,7 @@
                         </h4>
                         <v-form>
                           <v-text-field
+                          v-model="comboName"
                             label="Combo"
                             name="comboName"
                             prepend-icon="mdi-food"
@@ -95,6 +96,7 @@
                           />
 
                          <v-text-field
+                         v-model="price"
                             label="Precio"
                             name="Price"
                             prepend-icon="mdi-currency-usd"
@@ -102,6 +104,7 @@
                             color="#F4D03F"
                           />
                           <v-file-input
+                          v-model="photo"
                             accept="image/*"
                             label="Foto"
                             color="#F4D03F"
@@ -109,7 +112,8 @@
                         ></v-file-input>
 
                          <v-combobox
-                        v-model="model"
+
+                        v-model="description"
                         :items="items"
                         :search-input.sync="search"
                         hide-selected
@@ -131,18 +135,24 @@
                             </v-list-item>
                         </template>
                         </v-combobox>
+                        <v-switch
+                        color="yellow accent-4"
+                        v-model="available"
+                        inset
+                        :label="`disponible: ${available.toString()}`"
+                      ></v-switch>
                         </v-form>
                       </v-card-text>
                       <br>
                       <v-row align="center" justify="center">
                       <div class="text-center mt-n5 pa-3">
-                        <v-btn rounded outlined color="yellow accent-4" dark
+                        <v-btn id="registrarfood" @click="registerFood" rounded outlined color="yellow accent-4" dark
                           >ENVIAR</v-btn
                         >                        
                       </div>
                        <div class="text-center mt-n5 pa-3">
                       <router-link to="/" style="text-decoration:none">
-                        <v-btn rounded outlined dark color="#FFDB58" > CANCELAR </v-btn>
+                        <v-btn rounded outlined dark color="yellow accent-4" > CANCELAR </v-btn>
                         </router-link>
                       </div>
                       </v-row>
@@ -160,13 +170,41 @@
 </template>
 
 <script>
+
+import axios from "axios";
+
 export default {
   data: () => ({
     step: 1,
     items: ['Crispetas', 'Papas', 'Hot Dogs', 'Gaseosas'],
-      model: ['Comida'],
+     
       search: null,
+      comboName:"",
+      price:"",
+      photo:"",
+      description:"",
+      available:"",
   }),
+
+  methods:{
+registerFood(){
+  axios.post('http://localhost:3000/api/v1/catering',{
+    nombreCombo: this.comboName,
+    precio: this.price,
+    foto: this.photo,
+    descripcion: this.description,
+    activo: this.available,
+  })
+  .then(response =>{
+    console.log(response.data);
+  })
+  .catch(err =>{
+    console.log(err);
+  });
+  this.$router.push("/Catering");
+}
+  },
+
 watch: {
       model (val) {
         if (val.length > 5) {
@@ -174,9 +212,9 @@ watch: {
         }
       },
     },
-
   props: {
     source: String,
   },
 };
+
 </script>
