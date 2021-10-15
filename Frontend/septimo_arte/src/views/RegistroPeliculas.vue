@@ -285,7 +285,7 @@ export default {
     }),
   methods:{
   registerfilm(){
-    axios.post('http://localhost:3000/api/v1/peliculas',{
+    axios.post('/api/v1/peliculas',{
       nombre: this.title,
       clasificacion: this.clasification,
       formatos: this.select1,

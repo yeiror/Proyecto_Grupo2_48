@@ -181,7 +181,7 @@ export default {
 
   methods:{
 registerFood(){
-  axios.post('http://localhost:3000/api/v1/catering',{
+  axios.post('/api/v1/catering',{
     nombreCombo: this.comboName,
     precio: this.price,
     foto: this.photo,

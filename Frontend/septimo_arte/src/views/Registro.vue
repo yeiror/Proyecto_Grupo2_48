@@ -219,7 +219,7 @@ export default {
   }),
 methods:{
 register(){
-  axios.post('http://localhost:3000/api/v1/users',{
+  axios.post('/api/v1/users',{
     nombre: this.name,
     documento: this.document,
     correo: this.mail,
