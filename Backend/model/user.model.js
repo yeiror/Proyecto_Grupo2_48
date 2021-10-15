@@ -6,7 +6,7 @@ const UserSchema = new Schema({
     correo: {type: String, required: [true, 'Correo obligatorio']},
     celular:Number,
     contrasena: {type: String, required: [true, 'Nombre obligatorio']},
-   //rol: {type: String, require: [true, 'Rol del usuario obligatorio']}, 
+   // rol: {type: String, require: [true, 'Rol del usuario obligatorio']}, 
 
 });
 

@@ -104,7 +104,7 @@
                             color="#F4D03F"
                           />
                           <v-file-input
-                          v-model="foto"
+                          v-model="photo"
                             accept="image/*"
                             label="Foto"
                             color="#F4D03F"
@@ -113,7 +113,7 @@
 
                          <v-combobox
 
-                        v-model="descripcion"
+                        v-model="description"
                         :items="items"
                         :search-input.sync="search"
                         hide-selected
@@ -140,7 +140,7 @@
                       <br>
                       <v-row align="center" justify="center">
                       <div class="text-center mt-n5 pa-3">
-                        <v-btn rounded outlined color="yellow accent-4" dark
+                        <v-btn id="registrarfood" @click="registerFood" rounded outlined color="yellow accent-4" dark
                           >ENVIAR</v-btn
                         >                        
                       </div>
@@ -164,15 +164,39 @@
 </template>
 
 <script>
-//import axios from "axios";
+
+import axios from "axios";
 
 export default {
   data: () => ({
     step: 1,
     items: ['Crispetas', 'Papas', 'Hot Dogs', 'Gaseosas'],
-      model: ['Comida'],
+     
       search: null,
+      comboName:"",
+      price:"",
+      photo:"",
+      description:"",
   }),
+
+  methods:{
+registerFood(){
+  axios.post('http://localhost:3000/api/v1/catering',{
+    nombreCombo: this.comboName,
+    precio: this.price,
+    foto: this.photo,
+    descripcion: this.description,
+  })
+  .then(response =>{
+    console.log(response.data);
+  })
+  .catch(err =>{
+    console.log(err);
+  });
+  this.$router.push("/Catering");
+}
+  },
+
 watch: {
       model (val) {
         if (val.length > 5) {
@@ -180,9 +204,9 @@ watch: {
         }
       },
     },
-
   props: {
     source: String,
   },
 };
+
 </script>

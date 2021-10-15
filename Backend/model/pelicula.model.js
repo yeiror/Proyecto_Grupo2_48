@@ -7,7 +7,10 @@ const peliSchema = new Schema({
     fecha_estreno:{type: Date},
     fecha_final:{type: Date}, 
     sala: Number,
+    formatos: Array,
+    actores: Array,
     activo: {type: Boolean, default: true} 
+
 });
 
 // Convertir a modelo 

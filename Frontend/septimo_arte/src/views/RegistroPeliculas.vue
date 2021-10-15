@@ -99,6 +99,7 @@
                         </h4>
                         <v-form>
                           <v-text-field
+                          v-model="title"
                             label="Titulo"
                             name="filmTitle"
                             prepend-icon="mdi-movie-open"
@@ -107,16 +108,26 @@
                           />
 
                           <v-select
+                          v-model="clasification"
                             label="Clasificacion"
                             name="clasification"
                             :items="Tipo"
                             prepend-icon="mdi-account-filter-outline"
                             color="yellow accent-4"
                           />
+                            <v-select
+                          v-model="room"
+                            label="Sala"
+                            name="sala numero"
+                            :items="Tipo1"
+                            prepend-icon="mdi-room"
+                            color="yellow accent-4"
+                          />
+                            
                           <v-combobox
-                            v-model="select"
+                            v-model="select1"
                             :items="items"
-                            label="Formato"
+                            label="Formatos disponibles"
                             prepend-icon="mdi-motion-play"
                             type="text"
                             color="yellow accent-4"
@@ -124,6 +135,7 @@
                             chips
                           ></v-combobox>
                            <v-file-input
+                           v-model="picture"
                             accept="image/*"
                             label="Portada"
                             prepend-icon="mdi-camera"
@@ -135,7 +147,7 @@
                               sm="6"
                             >
                           <v-date-picker
-                              v-model="dates"
+                              v-model="dates1"
                               range
                               color="yellow accent-4"
                             ></v-date-picker>
@@ -155,7 +167,7 @@
                             </v-col>
                             </v-row>
                         <v-combobox
-                            v-model="model"
+                            v-model="languajes"
                             :items="items2"
                             :search-input.sync="search"
                             hide-selected
@@ -178,7 +190,7 @@
                             </template>
                           </v-combobox>
                            <v-combobox
-                            v-model="model2"
+                            v-model="Actors"
                             :items="items3"
                             :search-input.sync="search"
                             hide-selected
@@ -201,6 +213,7 @@
                             </template>
                           </v-combobox>
                         <v-textarea
+                        v-model="desciptions"
                             counter
                             label="Descripcion"
                             name="descrition"
@@ -213,7 +226,7 @@
                         <br>
                         <v-row align="center" justify="center">
                         <div class="text-center mt-n5 pa-3">
-                        <v-btn rounded outlined color="yellow accent-4" dark
+                        <v-btn id="registerfilm" @click="registerfilm" rounded outlined color="yellow accent-4" dark
                           >REGISTRAR PELICULA</v-btn
                         >
                       </div>
@@ -238,10 +251,12 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data: () => ({
     step: 1,
     Tipo: ["12+", "18+", "Todo Publico"],
+    Tipo1: ["1", "2", "3"],
     select: ['2D', '3D'],
         items: [
           '2D',
@@ -255,11 +270,45 @@ export default {
       modal: false,
       menu2: false,
       items2: ['Espanol', 'Ingles', 'Frances', 'Ruso'],
-      model: ['Idiomas'],
+      
       items3: ['Denzel Washinton', 'Keanu Reeves', 'Johnny Depp', 'Will Smith'],
-      model2: ['Actores'],
+      
       search: null,
-  }),
+      title:"",
+      clasification:"",
+      select1:"",
+      dates1:"",
+      languajes:"",
+      actors:"",
+      descriptions:"",
+
+    }),
+  methods:{
+  registerfilm(){
+    axios.post('http://localhost:3000/api/v1/peliculas',{
+      nombre: this.title,
+      clasificacion: this.clasification,
+      formatos: this.select1,
+      fecha_estreno: this.dates1,
+      sala: this.room,
+      descripcion: this.descriptions,
+      actores: this.actors,
+      //genero: this.gender,
+
+
+    })
+    .then(response =>{
+      console.log(response.data);
+    })
+    .catch(err =>{
+      console.log(err);
+    });
+    this.$router.push("/Cartelera");
+  }
+
+  },
+
+
   watch: {
       model (val) {
         if (val.length > 5) {
