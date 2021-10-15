@@ -9,7 +9,7 @@
     "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "devbabel": "nodemon index.js --exec babel-node",
-    "deploy": "cd .. && git subtree push --prefix back heroku master"
+    "deploy": "cd .. && git subtree push --prefix Backend heroku master"
   },
   "keywords": [],
   "author": "",

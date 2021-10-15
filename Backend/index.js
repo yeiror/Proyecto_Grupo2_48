@@ -19,6 +19,15 @@ mongoose.connect(uri, options).then(
 /** handle initial connection error */ 
 err => { console.log(err) });
 
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(__dirname+"/site/"));
+    app.get("*", (req, res)=>{
+        res.sendFile(__dirname + "/site/index.html")
+    });
+
+}
+
+
 //Middleware
 app.use(cors());    
 app.use(morgan('tiny'));

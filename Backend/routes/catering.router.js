@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-import catering from '../model/catering.model';
+const catering = require('../model/catering.model');
 
 router.post('/', async(req, res)=>{
     const body = req.body;
