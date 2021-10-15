@@ -32,5 +32,8 @@
     "faker": "^5.5.3",
     "mongoose": "^6.0.10",
     "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
